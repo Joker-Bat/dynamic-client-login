@@ -19,18 +19,21 @@ module.exports = [
     users: [
       {
         id: 0,
+        name: 'jack',
         username: 'jack',
         password: 'jack',
         email: 'jack@jack.com',
       },
       {
         id: 1,
+        name: 'beatrice',
         username: 'beatrice',
         password: 'beatrice',
         email: 'beatrice@beatrice.com',
       },
       {
         id: 2,
+        name: 'harvey',
         username: 'harvey',
         password: 'harvey',
         email: 'harvey@harvey.com',
@@ -49,18 +52,21 @@ module.exports = [
     users: [
       {
         id: 0,
+        name: 'benjamin',
         username: 'benjamin',
         password: 'benjamin',
         email: 'benjamin@benjamin.com',
       },
       {
         id: 1,
+        name: 'jack',
         username: 'jack',
         password: 'jack',
         email: 'jack@jack.com',
       },
       {
         id: 2,
+        name: 'william',
         username: 'william',
         password: 'william',
         email: 'william@william.com',
@@ -80,18 +86,21 @@ module.exports = [
     users: [
       {
         id: 0,
+        name: 'owen',
         username: 'owen',
         password: 'owen',
         email: 'owen@owen.com',
       },
       {
         id: 1,
+        name: 'ramona',
         username: 'ramona',
         password: 'ramona',
         email: 'ramona@ramona.com',
       },
       {
         id: 2,
+        name: 'jack',
         username: 'jack',
         password: 'jack',
         email: 'jack@jack.com',

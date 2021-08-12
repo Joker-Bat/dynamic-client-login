@@ -53,6 +53,7 @@ app.post('/api/login/:clientId', (req, res) => {
       status: 'success',
       data: {
         user: {
+          name: currentUser.name,
           username: currentUser.username,
           email: currentUser.email,
         },
