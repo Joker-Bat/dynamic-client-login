@@ -3,6 +3,7 @@ const defaultPreference = {
   usernameAs: 'username',
   passwordAs: 'password',
   signinAs: 'sign in',
+  logo: 'default.png',
 };
 
 module.exports = [
@@ -104,6 +105,22 @@ module.exports = [
         username: 'jack',
         password: 'jack',
         email: 'jack@jack.com',
+      },
+    ],
+  },
+  {
+    id: 3,
+    clientId: 'testing',
+    preference: {
+      ...defaultPreference,
+    },
+    users: [
+      {
+        id: 0,
+        name: 'testing now',
+        username: 'testing',
+        password: 'testing',
+        email: 'testing@testing.com',
       },
     ],
   },
