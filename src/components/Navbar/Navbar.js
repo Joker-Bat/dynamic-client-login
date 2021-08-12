@@ -1,16 +1,24 @@
 import React from 'react';
 import classes from './Navbar.module.scss';
 
+import { useSelector } from 'react-redux';
+
 const Navbar = () => {
+  const { preference } = useSelector((state) => state.client);
+
   return (
-    <nav className={classes.Navbar}>
-      <div className={classes.LogoContainer}>
-        <img
-          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.uzasBNwxum5G7YTfZZAFEQHaEK%26pid%3DApi&f=1"
-          alt="Logo"
-        />
-      </div>
-    </nav>
+    <>
+      {preference && (
+        <nav className={classes.Navbar}>
+          <div className={classes.LogoContainer}>
+            <img
+              src={`http://localhost:8000/images/${preference.logo}`}
+              alt="Logo"
+            />
+          </div>
+        </nav>
+      )}
+    </>
   );
 };
 

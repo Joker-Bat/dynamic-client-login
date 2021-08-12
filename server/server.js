@@ -12,6 +12,8 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(express.static('server/public'));
+
 app.get('/api/login/:clientId', (req, res) => {
   const { clientId } = req.params;
   const currentClient = data.find((client) => client.clientId === clientId);

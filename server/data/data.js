@@ -3,7 +3,6 @@ const defaultPreference = {
   usernameAs: 'username',
   passwordAs: 'password',
   signinAs: 'sign in',
-  logo: 'default.png',
 };
 
 module.exports = [
@@ -15,7 +14,7 @@ module.exports = [
       loginAs: 'sign in',
       usernameAs: 'account name',
       passwordAs: 'key',
-      logo: 'client1.png',
+      logo: 'client1.jpg',
     },
     clientUsers: [
       {
@@ -45,7 +44,7 @@ module.exports = [
       ...defaultPreference,
       loginAs: 'login please',
       signinAs: 'login',
-      logo: 'client2.png',
+      logo: 'client2.jpg',
     },
     clientUsers: [
       {
@@ -76,7 +75,7 @@ module.exports = [
       loginAs: 'get in',
       usernameAs: 'unique id',
       signinAs: 'submit',
-      logo: 'client3.png',
+      logo: 'client3.jpg',
     },
     clientUsers: [
       {
