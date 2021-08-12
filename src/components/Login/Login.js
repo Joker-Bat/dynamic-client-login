@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import classes from './Login.module.scss';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
@@ -46,6 +47,7 @@ const Login = ({ history }) => {
   return (
     <>
       <div className={classes.FormContainer}>
+        {loginError && <h1 className={classes.Error}>{loginError}</h1>}
         {error && <h1 className={classes.Error}>{error}</h1>}
         {loading && <div className={classes.Loading}></div>}
         {preference && (
