@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import classes from './Login.module.scss';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
@@ -18,7 +17,6 @@ const Login = ({ history }) => {
   const { preference, error, loading } = useSelector((state) => state.client);
 
   const {
-    user,
     error: loginError,
     loading: loginLoading,
     isLoggedIn,

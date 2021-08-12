@@ -1,0 +1,45 @@
+.Homepage {
+  padding: 2rem 1rem;
+
+  h1 {
+    font-weight: 400;
+
+    .Username {
+      text-transform: capitalize;
+    }
+  }
+
+  .UserDetails {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+
+    h2 {
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .Group {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      strong {
+        flex-basis: 35%;
+        text-transform: capitalize;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
