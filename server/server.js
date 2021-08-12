@@ -60,7 +60,7 @@ app.post('/api/login/:clientId', (req, res) => {
       },
     });
   } else {
-    res.status(200).json({
+    res.status(404).json({
       status: 'failed',
       message:
         'Email and password does not match or no matching user for this client',

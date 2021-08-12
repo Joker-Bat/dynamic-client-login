@@ -24,9 +24,7 @@ export const fetchClientPreference = (clientId) => {
   return async (dispatch) => {
     try {
       dispatch(fetchClientPreferenceRequested());
-      const response = await axios.get(
-        `http://localhost:8000/api/login/${clientId}`
-      );
+      const response = await axios.get(`/api/login/${clientId}`);
       dispatch(fetchClientPreferenceSuccess(response.data.data.preference));
     } catch (err) {
       dispatch(fetchClientPreferenceFailed(err.response.data.message));

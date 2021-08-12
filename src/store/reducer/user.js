@@ -3,24 +3,26 @@ import * as types from '../types';
 const initialState = {
   loading: false,
   error: '',
-  preference: null,
+  user: null,
+  isLoggedIn: false,
 };
 
-const clientReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.REQUESTED_FETCH_CLIENT_PREFERENCE:
+    case types.LOGIN_USER_REQUESTED:
       return {
         ...state,
         loading: true,
         error: '',
       };
-    case types.SUCCESS_FETCH_CLIENT_PREFERENCE:
+    case types.LOGIN_USER_SUCCESS:
       return {
         ...state,
         loading: false,
-        preference: action.preference,
+        user: action.user,
+        isLoggedIn: true,
       };
-    case types.FAILED_FETCH_CLIENT_PREFERENCE:
+    case types.LOGIN_USER_FAILED:
       return {
         ...state,
         loading: false,
@@ -31,4 +33,4 @@ const clientReducer = (state = initialState, action) => {
   }
 };
 
-export default clientReducer;
+export default userReducer;

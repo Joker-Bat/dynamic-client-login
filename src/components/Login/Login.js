@@ -5,17 +5,23 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useParams } from 'react-router-dom';
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchClientPreference } from '../../store/actions';
+import { fetchClientPreference, loginUser } from '../../store/actions';
 
 /**
  * Main Component
  */
 
-const Login = (props) => {
+const Login = ({ history }) => {
   const dispatch = useDispatch();
   const { clientId } = useParams();
-  // const [data, setData] = useState(null);
   const { preference, error, loading } = useSelector((state) => state.client);
+
+  const {
+    user,
+    error: loginError,
+    loading: loginLoading,
+    isLoggedIn,
+  } = useSelector((state) => state.user);
 
   const [usernameValue, setUsernameValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
@@ -26,11 +32,24 @@ const Login = (props) => {
   }, [preference]);
 
   useEffect(() => {
+    if (isLoggedIn) {
+      history.push('/app/home');
+    }
+  }, [isLoggedIn, history]);
+
+  useEffect(() => {
+    console.log(user);
+    console.log(loginError);
+    console.log(loginLoading);
+  }, [user, loginError, loginLoading]);
+
+  useEffect(() => {
     dispatch(fetchClientPreference(clientId));
   }, [dispatch, clientId]);
 
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(loginUser(usernameValue, passwordValue, clientId));
   };
 
   return (
