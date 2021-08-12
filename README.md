@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Dynamic Client Login
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple app that let user login to their registered clients.
 
-## Available Scripts
+## Tech used
 
-In the project directory, you can run:
+- React
+- Redux
+- Node & Express (With hard coded data)
 
-### `npm start`
+## Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<hr />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To test this application clone this repo in your system and navigate to that directory in terminal.
 
-### `npm test`
+> run this command
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```js
+  npm install
+```
 
-### `npm run build`
+After this command to run this app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```js
+  npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+this command will start both frontend and backend server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- To Access login page of client navigate to
+  ( /app/login/{clientId} ) [list of clients](#clientslist)
 
-### `npm run eject`
+## Features or work i've done on this app
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- In this we have only 3 clients and each client have 3 users. (By Adding clients and users data it can scale upto N).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br />
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- User can login to their respective clients and see their details.
 
-## Learn More
+<br />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Text like signin, username is rendered as per clients preference.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br />
 
-### Code Splitting
+- If user put incorrect credential they get error message, if user from another client try to login for different client they get error message.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br />
 
-### Analyzing the Bundle Size
+- If you try to get a login page for clients that have not registered, you'll get error message as (No client with that clientId)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## List of client and user details.
 
-### Making a Progressive Web App
+You can found all client and users details in (server/data/data.js) file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Here is a shore reference
 
-### Advanced Configuration
+### Clients and users list<a name="clientslist"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### For users there username and password is same
 
-### Deployment
+like
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+  username: 'jack',
+  password: 'jack'
+```
 
-### `npm run build` fails to minify
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- client1
+  - jack
+  - beatrice
+  - harvey
+- client2
+  - benjamin
+  - jack
+  - william
+- client3
+  - owen
+  - ramona
+  - jack
+
+<br />
+
+Note that user (jack) is in all three clients, in this case jack is considered as seperate user for each client, there is no data sharing between clients.
