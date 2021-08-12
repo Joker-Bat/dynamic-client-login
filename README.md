@@ -57,7 +57,7 @@ this command will start both frontend and backend server.
 
 You can found all client and users details in (server/data/data.js) file.
 
-Here is a shore reference
+Here is a short reference
 
 ### Clients and users list<a name="clientslist"></a>
 
