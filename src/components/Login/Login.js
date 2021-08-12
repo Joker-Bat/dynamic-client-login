@@ -28,20 +28,10 @@ const Login = ({ history }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
-    console.log(preference);
-  }, [preference]);
-
-  useEffect(() => {
     if (isLoggedIn) {
       history.push('/app/home');
     }
   }, [isLoggedIn, history]);
-
-  useEffect(() => {
-    console.log(user);
-    console.log(loginError);
-    console.log(loginLoading);
-  }, [user, loginError, loginLoading]);
 
   useEffect(() => {
     dispatch(fetchClientPreference(clientId));
@@ -49,6 +39,7 @@ const Login = ({ history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (loginLoading) return;
     dispatch(loginUser(usernameValue, passwordValue, clientId));
   };
 
@@ -90,7 +81,16 @@ const Login = ({ history }) => {
                 {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
               </span>
             </div>
-            <button type="submit">submit</button>
+            <button
+              type="submit"
+              className={loginLoading ? classes.Disable : ''}
+            >
+              {loginLoading ? (
+                <span className={classes.ButtonLoader}></span>
+              ) : (
+                'submit'
+              )}
+            </button>
           </form>
         )}
       </div>

@@ -98,6 +98,8 @@
     }
 
     button {
+      position: relative;
+      min-height: 30px;
       appearance: none;
       border: none;
       width: 40%;
@@ -109,6 +111,22 @@
       background-color: #000;
       color: #fff;
       border-radius: 4px;
+
+      &.Disable {
+        cursor: not-allowed;
+      }
+
+      .ButtonLoader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 25px;
+        height: 25px;
+        border-top: 2px solid #fff;
+        border-radius: 50%;
+        animation: buttonLoader 0.8s linear infinite;
+      }
     }
   }
 }
@@ -127,5 +145,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes buttonLoader {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
