@@ -16,7 +16,7 @@ module.exports = [
       passwordAs: 'key',
       logo: 'client1.jpg',
     },
-    clientUsers: [
+    users: [
       {
         id: 0,
         username: 'jack',
@@ -46,7 +46,7 @@ module.exports = [
       signinAs: 'login',
       logo: 'client2.jpg',
     },
-    clientUsers: [
+    users: [
       {
         id: 0,
         username: 'benjamin',
@@ -77,7 +77,7 @@ module.exports = [
       signinAs: 'submit',
       logo: 'client3.jpg',
     },
-    clientUsers: [
+    users: [
       {
         id: 0,
         username: 'owen',

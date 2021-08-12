@@ -12,6 +12,8 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(express.json());
+
 app.use(express.static('server/public'));
 
 app.get('/api/login/:clientId', (req, res) => {
@@ -28,6 +30,39 @@ app.get('/api/login/:clientId', (req, res) => {
     res.status(404).json({
       status: 'failed',
       message: `No client record found for ${clientId}`,
+    });
+  }
+});
+
+app.post('/api/login/:clientId', (req, res) => {
+  const { clientId } = req.params;
+  const { username, password } = req.body;
+  const currentClient = data.find((client) => client.clientId === clientId);
+  if (!currentClient) {
+    res.status(404).json({
+      status: 'failed',
+      message: `No client record found for ${clientId}`,
+    });
+  }
+  const currentUser = currentClient.users.find(
+    (user) => user.username === username && user.password === password
+  );
+
+  if (currentUser) {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        user: {
+          username: currentUser.username,
+          email: currentUser.email,
+        },
+      },
+    });
+  } else {
+    res.status(200).json({
+      status: 'failed',
+      message:
+        'Email and password does not match or no matching user for this client',
     });
   }
 });
