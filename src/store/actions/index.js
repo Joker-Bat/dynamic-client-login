@@ -1,0 +1,1 @@
+export { fetchClientPreference } from './client';

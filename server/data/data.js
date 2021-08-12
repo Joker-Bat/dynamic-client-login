@@ -6,7 +6,7 @@ const defaultPreference = {
   logo: 'default.png',
 };
 
-const data = [
+module.exports = [
   {
     id: 0,
     clientId: 'client1',
@@ -20,19 +20,19 @@ const data = [
     clientUsers: [
       {
         id: 0,
-        username: 'Jack',
+        username: 'jack',
         password: 'jack',
         email: 'jack@jack.com',
       },
       {
         id: 1,
-        username: 'Beatrice',
+        username: 'beatrice',
         password: 'beatrice',
         email: 'beatrice@beatrice.com',
       },
       {
         id: 2,
-        username: 'Harvey',
+        username: 'harvey',
         password: 'harvey',
         email: 'harvey@harvey.com',
       },
@@ -44,25 +44,25 @@ const data = [
     preference: {
       ...defaultPreference,
       loginAs: 'login please',
-      signinAs: 'Login in',
+      signinAs: 'login',
       logo: 'client2.png',
     },
     clientUsers: [
       {
         id: 0,
-        username: 'Benjamin',
+        username: 'benjamin',
         password: 'benjamin',
         email: 'benjamin@benjamin.com',
       },
       {
         id: 1,
-        username: 'Jack',
+        username: 'jack',
         password: 'jack',
         email: 'jack@jack.com',
       },
       {
         id: 2,
-        username: 'William',
+        username: 'william',
         password: 'william',
         email: 'william@william.com',
       },
@@ -70,7 +70,7 @@ const data = [
   },
   {
     id: 2,
-    clientId: 'client2',
+    clientId: 'client3',
     preference: {
       ...defaultPreference,
       loginAs: 'get in',
@@ -81,24 +81,22 @@ const data = [
     clientUsers: [
       {
         id: 0,
-        username: 'Owen',
+        username: 'owen',
         password: 'owen',
         email: 'owen@owen.com',
       },
       {
         id: 1,
-        username: 'Ramona',
+        username: 'ramona',
         password: 'ramona',
         email: 'ramona@ramona.com',
       },
       {
         id: 2,
-        username: 'Jack',
+        username: 'jack',
         password: 'jack',
         email: 'jack@jack.com',
       },
     ],
   },
 ];
-
-export default data;
