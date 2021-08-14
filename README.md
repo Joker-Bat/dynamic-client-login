@@ -8,6 +8,10 @@ A simple app that let user login to their registered clients.
 - Redux
 - Node & Express (With hard coded data)
 
+> Update
+
+- Redux-persist (save the store in localstorage and we can get the store value even after the reload)
+
 ## Getting started
 
 <hr />
