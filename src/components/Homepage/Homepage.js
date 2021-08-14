@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './Homepage.module.scss';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logoutUser } from '../../store/actions/index';
 
-const Homepage = () => {
+const Homepage = ({ history }) => {
+  const dispatch = useDispatch();
+
+  const [nextClientId, setNextClientId] = useState('');
+
   const { preference } = useSelector((state) => state.client);
   const { isLoggedIn, user } = useSelector((state) => state.user);
+
+  const navigateToLogin = () => {
+    dispatch(logoutUser());
+    history.push(`/app/login/${nextClientId}`);
+  };
+
   return (
     <div className={classes.Homepage}>
       {!isLoggedIn ? (
@@ -30,6 +41,19 @@ const Homepage = () => {
               <p>{user.username}</p>
             </div>
           </div>
+          <form
+            className={classes.NextClientNavigator}
+            onSubmit={navigateToLogin}
+          >
+            <label htmlFor="nextClientId">/app/login/</label>
+            <input
+              id="nextClientId"
+              type="text"
+              value={nextClientId}
+              onChange={(e) => setNextClientId(e.target.value)}
+            />
+            <button type="submit">go</button>
+          </form>
         </>
       )}
     </div>

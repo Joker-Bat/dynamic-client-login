@@ -28,6 +28,10 @@ const userReducer = (state = initialState, action) => {
         loading: false,
         error: action.message,
       };
+    case types.LOGOUT_USER:
+      return {
+        ...initialState,
+      };
     default:
       return state;
   }

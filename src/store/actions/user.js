@@ -35,3 +35,7 @@ export const loginUser = (username, password, clientId) => {
     }
   };
 };
+
+export const logoutUser = () => {
+  return { type: types.LOGOUT_USER };
+};

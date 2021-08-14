@@ -1,2 +1,2 @@
 export { fetchClientPreference } from './client';
-export { loginUser } from './user';
+export { loginUser, logoutUser } from './user';

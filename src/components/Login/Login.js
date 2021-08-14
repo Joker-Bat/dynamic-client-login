@@ -11,7 +11,7 @@ import { fetchClientPreference, loginUser } from '../../store/actions';
  * Main Component
  */
 
-const Login = ({ history }) => {
+const Login = ({ history, ...props }) => {
   const dispatch = useDispatch();
   const { clientId } = useParams();
   const { preference, error, loading } = useSelector((state) => state.client);
@@ -36,7 +36,7 @@ const Login = ({ history }) => {
     dispatch(fetchClientPreference(clientId));
   }, [dispatch, clientId]);
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     if (loginLoading) return;
     dispatch(loginUser(usernameValue, passwordValue, clientId));
